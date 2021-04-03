@@ -1,0 +1,17 @@
+{
+  "name": "@vsc-simias/root",
+  "description": "API Client for VS Code",
+  "repository": "git@github.com:githrdw/vsc-simias.git",
+  "author": "Ruben de Wit",
+  "license": "MIT",
+  "private": true,
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

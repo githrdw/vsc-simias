@@ -1,0 +1,76 @@
+{
+	"name": "core",
+	"displayName": "Home",
+	"description": "Homecoming dashboard for VSCode",
+	"version": "0.0.0",
+	"publisher": "simias",
+	"engines": {
+		"vscode": "^1.51.1"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished",
+		"onCommand:simias.openMainView"
+	],
+	"main": "./dist/extension.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/githrdw/vsc-simias"
+	},
+	"contributes": {
+		"commands": [
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "simias",
+					"title": "Simias",
+					"icon": "./assets/logo_vschome.white.min.png"
+				}
+			]
+		},
+		"views": {
+			"simias": [
+				{
+					"type": "webview",
+					"id": "simias.openSidebarView",
+					"name": "REST Client",
+					"contextualTitle": "Simias"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run package",
+		"compile": "webpack --config ./build/node-extension.webpack.config.js",
+		"watch": "webpack --watch --config ./build/node-extension.webpack.config.js",
+		"package": "webpack --mode production --devtool hidden-source-map --config ./build/node-extension.webpack.config.js",
+		"test-compile": "tsc -p ./",
+		"test-watch": "tsc -watch -p ./",
+		"pretest": "yarn run test-compile && yarn run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"dependencies": {
+		"@simias/sidebar": "^0.0.0"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^14.14.25",
+		"@types/vscode": "^1.51.0",
+		"@typescript-eslint/eslint-plugin": "^4.9.0",
+		"@typescript-eslint/parser": "^4.9.0",
+		"eslint": "7.23.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"raw-loader": "^4.0.2",
+		"ts-loader": "^8.0.17",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1",
+		"webpack": "5.30.0",
+		"webpack-cli": "^4.2.0"
+	}
+}
