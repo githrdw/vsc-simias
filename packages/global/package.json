@@ -1,0 +1,17 @@
+{
+  "name": "@simias/global",
+  "version": "0.0.0",
+  "description": "Reusable global declarations",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "rollup": "^ 2.45.2",
+    "rollup-plugin-scss": "^2.6.1"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "nodemon --watch \"src/**/**\" --ext \"js,html,scss\" --exec npm run build"
+  }
+}

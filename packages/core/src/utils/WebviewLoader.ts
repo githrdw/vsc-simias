@@ -53,8 +53,12 @@ export default class WebviewLoader {
     }, null, this.subscriptions);
   }
 
+  private getGlobalAsset(path: string): Promise<AssetContainer> {
+    return import(`@simias/global/dist/${path}`);
+  }
+
   private async resolveAsset(path: string, meta: AssetMeta): Promise<AssetContainer> {
-    const asset = await this.getAsset(path);
+    const asset = path === 'main.css' ? await this.getGlobalAsset(path) : await this.getAsset(path);
     const uri = vscode.Uri.file(join(this.assetsPath, asset));
     const url = this.webview?.asWebviewUri(uri).toString() || '';
     return { url, ...meta };

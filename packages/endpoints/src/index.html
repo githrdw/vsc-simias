@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TypeScript Web Component</title>
+  <link rel="stylesheet" href="enpoints-main.css">
+</head>
+
+<body>
+
+  <script id="component-tmpl" type="x-tmpl-mustache">
+    <div id="helpText">Draggable components:</div>
+    {{#components}}
+      <article data-id="{{id}}" class="component" draggable="true">
+        <h4>{{title}}</h4>
+        <p>{{subtitle}}</p>
+      </article>
+    {{/components}}
+  </script>
+  <section id="actions">
+    <button class="w-full" id="action-dashboard">Open dashboard</button>
+  </section>
+  <section id="components">
+  </section>
+</body>
+
+</html>

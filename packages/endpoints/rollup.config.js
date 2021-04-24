@@ -14,7 +14,7 @@ export default {
     }),
     nodeResolve(),
     scss({
-      output: "./dist/sidebar-main.css",
+      output: "./dist/endpoints-main.css",
       outputStyle: "compressed",
       failOnError: true,
       includePaths: [resolve('node_modules'), resolve('../../node_modules')],
@@ -27,7 +27,7 @@ export default {
   output: {
     sourcemap: false,
     exports: 'named',
-    file: 'dist/sidebar-main.js',
+    file: 'dist/endpoints-main.js',
     format: 'es'
   }
 }

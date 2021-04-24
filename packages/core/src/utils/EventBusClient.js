@@ -29,10 +29,11 @@ class EventBus {
         task.resolve?.({ ...payload, _task: task });
       }
     }
-    if (payload?.action) {
-      const callbacks = this.callbacks.filter(({ action }) => action === payload.action);
+    if (payload?.__action) {
+      const callbacks = this.callbacks.filter(({ action }) => action === payload.__action);
       if (callbacks.length) {
-        for (const { callback } of callbacks) { callback?.(data); };
+        // delete payload.__action;
+        for (const { callback } of callbacks) { callback?.(payload); };
       }
     }
   }

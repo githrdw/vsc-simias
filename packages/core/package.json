@@ -20,8 +20,7 @@
 		"url": "https://github.com/githrdw/vsc-simias"
 	},
 	"contributes": {
-		"commands": [
-		],
+		"commands": [],
 		"viewsContainers": {
 			"activitybar": [
 				{
@@ -35,8 +34,43 @@
 			"simias": [
 				{
 					"type": "webview",
-					"id": "simias.openSidebarView",
-					"name": "REST Client",
+					"id": "simias.openEnvironmentView",
+					"name": "Environment",
+					"contextualTitle": "Simias"
+				},
+				{
+					"type": "webview",
+					"id": "simias.openHistoryView",
+					"name": "History",
+					"contextualTitle": "Simias"
+				},
+				{
+					"type": "webview",
+					"id": "simias.openResponseView",
+					"name": "Response",
+					"contextualTitle": "Simias"
+				},
+				{
+					"id": "simias.openResponseTreeView",
+					"name": "Response (tree)",
+					"contextualTitle": "Simias"
+				},
+				{
+					"type": "webview",
+					"id": "simias.openEndpointsView",
+					"name": "Endpoints",
+					"contextualTitle": "Simias"
+				},
+				{
+					"type": "webview",
+					"id": "simias.openVariablesView",
+					"name": "Variables",
+					"contextualTitle": "Simias"
+				},
+				{
+					"type": "webview",
+					"id": "simias.openRequestView",
+					"name": "Request",
 					"contextualTitle": "Simias"
 				}
 			]
@@ -54,7 +88,16 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"dependencies": {
-		"@simias/sidebar": "^0.0.0"
+		"@simias/endpoints": "^0.0.0",
+		"@simias/environment": "^0.0.0",
+		"@simias/global": "^0.0.0",
+		"@simias/history": "^0.0.0",
+		"@simias/request": "^0.0.0",
+		"@simias/response": "^0.0.0",
+		"@simias/variables": "^0.0.0",
+		"abort-controller": "^3.0.0",
+		"jsonc-parser": "^3.0.0",
+		"node-fetch": "^3.0.0-beta.9"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.3",

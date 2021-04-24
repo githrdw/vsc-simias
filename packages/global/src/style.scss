@@ -49,10 +49,12 @@ button {
   &:hover {
     background: $control-hover;
   }
+}
 
-  &.full-width {
-    width: 100%
-  }
+select,
+input[type="submit"],
+button {
+  min-height: 28px;
 }
 
 section {
@@ -71,6 +73,6 @@ article {
   }
 }
 
-div#helpText {
-  padding-bottom: 8px;
+.w-full {
+  width: 100%;
 }

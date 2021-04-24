@@ -1,7 +1,7 @@
 {
-  "name": "@simias/sidebar",
+  "name": "@simias/environment",
   "version": "0.0.0",
-  "description": "Sidebar",
+  "description": "Environment tab",
   "main": "index.js",
   "license": "MIT",
   "private": true,
